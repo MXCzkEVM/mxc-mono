@@ -11,6 +11,8 @@ import { generateRelayerConfig } from './scripts/vite-plugins/generateRelayerCon
 
 if (process.env.NODE_ENV === 'test') {
   dotenv.config({ path: './.env.test' });
+} else {
+  dotenv.config();
 }
 
 export default defineConfig({

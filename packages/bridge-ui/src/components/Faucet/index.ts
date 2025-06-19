@@ -1,1 +1,1 @@
-export { default as Faucet } from './Faucet.svelte';
+export { default as Faucet } from './FaucetApi.svelte';
