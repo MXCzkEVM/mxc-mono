@@ -3,6 +3,7 @@ import { type Chain, createPublicClient, createWalletClient, http, parseEther, p
 import { privateKeyToAccount } from 'viem/accounts';
 import { arbitrumSepolia } from 'viem/chains';
 
+import { env } from '$env/dynamic/private';
 import { getLogger } from '$libs/util/logger';
 
 import { _TOKEN_CONFIG } from '../tokens/+server.js';
@@ -16,8 +17,8 @@ const log = getLogger('faucet:claim');
 
 // Redis configuration - read from environment variables
 const REDIS_CONFIG = {
-  url: process.env.KV_REST_API_URL || '',
-  token: process.env.KV_REST_API_TOKEN || '',
+  url: env.KV_REST_API_URL,
+  token: env.KV_REST_API_TOKEN,
 };
 
 // Define Moonchain Geneva testnet
@@ -59,12 +60,12 @@ const NETWORK_CONFIG: Record<
   421614: {
     chain: arbitrumSepolia,
     rpcUrl: 'https://sepolia-rollup.arbitrum.io/rpc',
-    privateKeyEnvVar: process.env.FAUCET_PRIVATE_KEY!,
+    privateKeyEnvVar: env.FAUCET_PRIVATE_KEY,
   },
   5167004: {
     chain: moonchainGeneva,
     rpcUrl: 'https://geneva-rpc.moonchain.com',
-    privateKeyEnvVar: process.env.FAUCET_PRIVATE_KEY!,
+    privateKeyEnvVar: env.FAUCET_PRIVATE_KEY,
   },
 };
 

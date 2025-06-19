@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit';
 
+import { env } from '$env/dynamic/private';
 import { getLogger } from '$libs/util/logger';
 
 import type { RequestHandler } from './$types';
@@ -34,7 +35,7 @@ function getTokenConfig(): Record<
   }>
 > {
   try {
-    const configJson = process.env.FAUCET_TOKEN_CONFIG;
+    const configJson = env.FAUCET_TOKEN_CONFIG;
     if (configJson) {
       const parsed = JSON.parse(configJson);
       log('Loaded token config from environment variable');
