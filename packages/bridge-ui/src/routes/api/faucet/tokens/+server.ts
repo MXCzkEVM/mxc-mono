@@ -35,7 +35,7 @@ function getTokenConfig(): Record<
   }>
 > {
   try {
-    const configJson = env.FAUCET_TOKEN_CONFIG;
+    const configJson = env.FAUCET_TOKEN_CONFIG || '';
     if (configJson) {
       const parsed = JSON.parse(configJson);
       log('Loaded token config from environment variable');

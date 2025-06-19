@@ -17,8 +17,8 @@ const log = getLogger('faucet:claim');
 
 // Redis configuration - read from environment variables
 const REDIS_CONFIG = {
-  url: env.KV_REST_API_URL,
-  token: env.KV_REST_API_TOKEN,
+  url: env.KV_REST_API_URL || '',
+  token: env.KV_REST_API_TOKEN || '',
 };
 
 // Define Moonchain Geneva testnet
@@ -60,12 +60,12 @@ const NETWORK_CONFIG: Record<
   421614: {
     chain: arbitrumSepolia,
     rpcUrl: 'https://sepolia-rollup.arbitrum.io/rpc',
-    privateKeyEnvVar: env.FAUCET_PRIVATE_KEY,
+    privateKeyEnvVar: env.FAUCET_PRIVATE_KEY || '',
   },
   5167004: {
     chain: moonchainGeneva,
     rpcUrl: 'https://geneva-rpc.moonchain.com',
-    privateKeyEnvVar: env.FAUCET_PRIVATE_KEY,
+    privateKeyEnvVar: env.FAUCET_PRIVATE_KEY || '',
   },
 };
 
