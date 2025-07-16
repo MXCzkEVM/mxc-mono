@@ -49,7 +49,14 @@ contract SignalService is EssentialContract, ISignalService {
     /// @notice Initializes the contract.
     /// @param _owner The owner of this contract. msg.sender will be used if this value is zero.
     /// @param _sharedAddressManager The address of the {AddressManager} contract.
-    function init2(address _owner, address _sharedAddressManager) external reinitializer(2) {
+    function init2(
+        address _owner,
+        address _sharedAddressManager
+    )
+        external
+        onlyOwner
+        reinitializer(2)
+    {
         __Essential_init(_owner, _sharedAddressManager);
     }
 

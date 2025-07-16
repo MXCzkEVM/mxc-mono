@@ -33,6 +33,7 @@ contract MxcToken is TaikoTokenBase {
         address _recipient
     )
         public
+        onlyOwner
         reinitializer(2)
     {
         __Essential_init(_owner, _addressManager);

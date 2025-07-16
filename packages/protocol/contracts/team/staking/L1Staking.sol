@@ -4,6 +4,9 @@ pragma solidity ^0.8.24;
 import "../../tko/IMxcToken.sol";
 import "../../common/IAddressResolver.sol";
 import "../../common/LibStrings.sol";
+import "../../libs/LibAddress.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import { EssentialContract } from "../../common/EssentialContract.sol";
 import { IL1Staking } from "./IL1Staking.sol";
 
@@ -11,6 +14,9 @@ import { IL1Staking } from "./IL1Staking.sol";
 /// @notice A contract that offers helper functions to handle staking.
 /// @custom:security-contact luanxu@mxc.org
 contract L1Staking is EssentialContract, IL1Staking {
+    using LibAddress for address;
+    using SafeERC20 for IERC20;
+
     modifier whenStakingBalancesAbove() {
         if (stakingState.stakingBalances[msg.sender] < MIN_DEPOSIT) {
             revert INSUFFICIENT_BALANCE();
@@ -77,7 +83,7 @@ contract L1Staking is EssentialContract, IL1Staking {
         external
         whenNotPaused
         nonReentrant
-        onlyFromOptionalNamed(LibStrings.B_ZKCENTER)
+        onlyFromNamed(LibStrings.B_ZKCENTER)
     {
         uint256 newBalance = stakingState.stakingBalances[_user] + _amount;
         if (newBalance < MIN_DEPOSIT) revert INSUFFICIENT_DEPOSIT();
@@ -97,7 +103,7 @@ contract L1Staking is EssentialContract, IL1Staking {
     )
         external
         nonReentrant
-        onlyFromOptionalNamed(LibStrings.B_ZKCENTER)
+        onlyFromNamed(LibStrings.B_ZKCENTER)
     {
         if (stakingState.stakingBalances[_user] == 0) revert INSUFFICIENT_BALANCE();
         if (cancel) {
@@ -113,7 +119,7 @@ contract L1Staking is EssentialContract, IL1Staking {
         external
         whenNotPaused
         nonReentrant
-        onlyFromOptionalNamed(LibStrings.B_ZKCENTER)
+        onlyFromNamed(LibStrings.B_ZKCENTER)
     {
         uint256 amount = stakingState.stakingBalances[_user]; // Get the user's staked balance
 
@@ -224,7 +230,7 @@ contract L1Staking is EssentialContract, IL1Staking {
         external
         whenNotPaused
         nonReentrant
-        onlyFromOptionalNamed(LibStrings.B_ZKCENTER)
+        onlyFromNamed(LibStrings.B_ZKCENTER)
         returns (uint256)
     {
         uint256 currentEpoch = getCurrentEpoch();
@@ -246,7 +252,7 @@ contract L1Staking is EssentialContract, IL1Staking {
         uint256 _rate
     )
         external
-        onlyFromOptionalNamed(LibStrings.B_ZKCENTER)
+        onlyFromNamed(LibStrings.B_ZKCENTER)
     {
         uint256 amount = stakingState.stakingBalances[_user];
         if (amount == 0) return;
@@ -265,9 +271,9 @@ contract L1Staking is EssentialContract, IL1Staking {
         uint256 _epochAmount
     )
         external
-        onlyFromOptionalNamed(LibStrings.B_ZKCENTER)
+        onlyFromNamed(LibStrings.B_ZKCENTER)
     {
-        uint256 epochMax = getCurrentEpoch();   // Pause up to next epoch
+        uint256 epochMax = getCurrentEpoch(); // Pause up to next epoch
         uint256 newUserEpoch = stakingState.lastClaimedEpoch[_user] + _epochAmount;
         if (newUserEpoch > epochMax) {
             newUserEpoch = epochMax;
@@ -314,6 +320,27 @@ contract L1Staking is EssentialContract, IL1Staking {
         }
         // Round down to the nearest 1e16
         return (reward / 1e16) * 1e16;
+    }
+
+    /// @notice Withdraw token or Ether from this address
+    /// @param _token Token address or address(0) if Ether.
+    /// @param _to Withdraw to address.
+    function withdraw(
+        address _token,
+        address _to,
+        uint256 _amount
+    )
+        external
+        whenNotPaused
+        onlyOwner
+        nonReentrant
+    {
+        if (_to == address(0)) revert ZERO_ADDRESS();
+        if (_token == address(0)) {
+            _to.sendEtherAndVerify(_amount);
+        } else {
+            IERC20(_token).safeTransfer(_to, _amount);
+        }
     }
 
     function _mxc() private view returns (IMxcToken) {

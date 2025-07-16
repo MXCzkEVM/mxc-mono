@@ -134,7 +134,7 @@ abstract contract TaikoL1TestBase is TaikoTest {
         vm.stopPrank();
     }
 
-        function proposeBlockV2(
+    function proposeBlockV2(
         address proposer,
         uint24 txListSize
     )
@@ -152,7 +152,6 @@ abstract contract TaikoL1TestBase is TaikoTest {
         );
         vm.stopPrank();
     }
-
 
     function proveBlock(
         address prover,
