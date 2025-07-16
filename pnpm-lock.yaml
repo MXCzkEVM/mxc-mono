@@ -39,7 +39,7 @@ importers:
         version: 2.6.2(react@19.1.0)
       '@web3modal/wagmi':
         specifier: ^4.1.11
-        version: 4.2.3(9f661e39d93dcaf8224e7bb81a205bcd)
+        version: 4.2.3(bbqv4lctwh7jyoyvqbcdkdm4f4)
       '@zerodevx/svelte-toast':
         specifier: ^0.9.5
         version: 0.9.5(svelte@4.2.19)
@@ -489,8 +489,8 @@ importers:
         specifier: ^5.7.2
         version: 5.7.2(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       solc:
-        specifier: 0.8.27
-        version: 0.8.27
+        specifier: 0.8.24
+        version: 0.8.24
       solhint:
         specifier: ^5.0.3
         version: 5.0.3
@@ -754,7 +754,7 @@ importers:
         version: 4.2.3
       '@web3modal/wagmi':
         specifier: ^4.1.1
-        version: 4.2.3(d008710d6b26dae3475c3e8eacf84f7e)
+        version: 4.2.3(dkyd2ncrzlldcq6lqmudz6owa4)
       '@zerodevx/svelte-toast':
         specifier: ^0.9.5
         version: 0.9.5(svelte@4.2.19)
@@ -9808,11 +9808,6 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
 
-  solc@0.8.27:
-    resolution: {integrity: sha512-BNxMol2tUAbkH7HKlXBcBqrGi2aqgv+uMHz26mJyTtlVgWmBA4ktiw0qVKHfkjf2oaHbwtbtaSeE2dhn/gTAKw==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-
   solhint@4.5.4:
     resolution: {integrity: sha512-Cu1XiJXub2q1eCr9kkJ9VPv1sGcmj3V7Zb76B0CoezDOB9bu3DxKIFFH7ggCl9fWpEPD6xBmRLfZrYijkVmujQ==}
     hasBin: true
@@ -17474,41 +17469,6 @@ snapshots:
       lit: 3.1.0
       qrcode: 1.5.3
 
-  '@web3modal/wagmi@4.2.3(9f661e39d93dcaf8224e7bb81a205bcd)':
-    dependencies:
-      '@wagmi/connectors': 4.3.10(@wagmi/core@2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.2.0(react@19.1.0))(react-i18next@13.5.0(i18next@23.11.5)(react-dom@18.2.0(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0)(rollup@4.21.2)(typescript@5.5.4)(utf-8-validate@5.0.10)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8)
-      '@wagmi/core': 2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))
-      '@walletconnect/ethereum-provider': 2.13.0(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(utf-8-validate@5.0.10)
-      '@web3modal/polyfills': 4.2.3
-      '@web3modal/scaffold': 4.2.3(react@19.1.0)
-      '@web3modal/scaffold-react': 4.2.3(react-dom@18.2.0(react@19.1.0))(react@19.1.0)
-      '@web3modal/scaffold-utils': 4.2.3(react@19.1.0)
-      '@web3modal/scaffold-vue': 4.2.3(react@19.1.0)
-      '@web3modal/siwe': 4.2.3(react@19.1.0)
-      viem: 2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
-    optionalDependencies:
-      react: 19.1.0
-      react-dom: 18.2.0(react@19.1.0)
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@react-native-async-storage/async-storage'
-      - '@types/react'
-      - '@upstash/redis'
-      - '@vercel/kv'
-      - bufferutil
-      - encoding
-      - ioredis
-      - uWebSockets.js
-      - utf-8-validate
-
   '@web3modal/wagmi@4.2.3(@wagmi/connectors@5.1.8(@wagmi/core@2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.2.0(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0)(rollup@4.21.2)(typescript@5.5.4)(utf-8-validate@5.0.10)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))(@wagmi/core@2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.2.0(react@19.1.0))(react@19.1.0)(utf-8-validate@5.0.10)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))':
     dependencies:
       '@wagmi/connectors': 5.1.8(@wagmi/core@2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.2.0(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0)(rollup@4.21.2)(typescript@5.5.4)(utf-8-validate@5.0.10)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8)
@@ -17544,7 +17504,42 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
 
-  '@web3modal/wagmi@4.2.3(d008710d6b26dae3475c3e8eacf84f7e)':
+  '@web3modal/wagmi@4.2.3(bbqv4lctwh7jyoyvqbcdkdm4f4)':
+    dependencies:
+      '@wagmi/connectors': 4.3.10(@wagmi/core@2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.2.0(react@19.1.0))(react-i18next@13.5.0(i18next@23.11.5)(react-dom@18.2.0(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0)(rollup@4.21.2)(typescript@5.5.4)(utf-8-validate@5.0.10)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8)
+      '@wagmi/core': 2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))
+      '@walletconnect/ethereum-provider': 2.13.0(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(utf-8-validate@5.0.10)
+      '@web3modal/polyfills': 4.2.3
+      '@web3modal/scaffold': 4.2.3(react@19.1.0)
+      '@web3modal/scaffold-react': 4.2.3(react-dom@18.2.0(react@19.1.0))(react@19.1.0)
+      '@web3modal/scaffold-utils': 4.2.3(react@19.1.0)
+      '@web3modal/scaffold-vue': 4.2.3(react@19.1.0)
+      '@web3modal/siwe': 4.2.3(react@19.1.0)
+      viem: 2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+    optionalDependencies:
+      react: 19.1.0
+      react-dom: 18.2.0(react@19.1.0)
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@types/react'
+      - '@upstash/redis'
+      - '@vercel/kv'
+      - bufferutil
+      - encoding
+      - ioredis
+      - uWebSockets.js
+      - utf-8-validate
+
+  '@web3modal/wagmi@4.2.3(dkyd2ncrzlldcq6lqmudz6owa4)':
     dependencies:
       '@wagmi/connectors': 4.3.10(@wagmi/core@2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(encoding@0.1.13)(react-dom@18.2.0(react@19.1.0))(react-i18next@13.5.0(i18next@22.5.1)(react-dom@18.2.0(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0))(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(bufferutil@4.0.8)(encoding@0.1.13)(react@19.1.0)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.1.0)(rollup@4.21.2)(typescript@5.5.4)(utf-8-validate@5.0.10)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8)
       '@wagmi/core': 2.13.4(react@19.1.0)(typescript@5.5.4)(viem@2.21.1(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8))
@@ -23942,18 +23937,6 @@ snapshots:
   solady@https://codeload.github.com/Vectorized/solady/tar.gz/de0f336d2033d04e0f77c923d639c7fbffd48b6d: {}
 
   solc@0.8.24:
-    dependencies:
-      command-exists: 1.2.9
-      commander: 8.3.0
-      follow-redirects: 1.15.6(debug@4.3.4)
-      js-sha3: 0.8.0
-      memorystream: 0.3.1
-      semver: 5.7.1
-      tmp: 0.0.33
-    transitivePeerDependencies:
-      - debug
-
-  solc@0.8.27:
     dependencies:
       command-exists: 1.2.9
       commander: 8.3.0
